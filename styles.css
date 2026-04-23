@@ -572,6 +572,9 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
   color: #1a1000;
 }
 
+/* No desktop, date-card-left não tem efeito estrutural */
+.date-card-left { display: contents; }
+
 .date-card p {
   font-size: 13px;
   color: var(--text-muted);
@@ -996,7 +999,7 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
   50%       { transform: translateY(-6px); }
 }
 .hero-info-card--accent {
-  animation: float 3.6s ease-in-out infinite;
+  animation: none;
 }
 
 /* Shimmer no botão primário ao hover */
@@ -1119,18 +1122,67 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
   .cta-actions { flex-direction: column; }
   .cta-actions .btn { width: 100%; justify-content: center; }
 
-  /* Dates */
-  .dates-grid { grid-template-columns: repeat(2, 1fr); }
-
   /* Stats */
   .stats-strip { padding: 0; }
   .stat-item { padding: 36px 24px; }
+
+  /* Dates mobile — layout horizontal tipo lista */
+  .dates-section { padding: 72px 0 80px; }
+  .dates-grid::before { display: none; }
+  .dates-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .date-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    text-align: left;
+    border-radius: var(--radius);
+  }
+  .date-card::before { display: none; }
+  .date-card--featured { border-radius: var(--radius); }
+
+  /* Lado esquerdo: etapa + chip empilhados — override display:contents */
+  .date-card-left {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    width: 88px;
+  }
+  .date-step {
+    margin-bottom: 0;
+    font-size: 9px;
+    text-align: center;
+  }
+  .date-chip {
+    margin-bottom: 0;
+    font-size: 11px;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+
+  /* Separador vertical entre left e texto */
+  .date-card p {
+    font-size: 13px;
+    line-height: 1.45;
+    border-left: 1px solid rgba(0,0,0,.1);
+    padding-left: 16px;
+    flex: 1;
+  }
+  .date-card--featured p {
+    border-left-color: rgba(255,255,255,.2);
+  }
 
   /* Footer */
   .site-footer .container { justify-content: center; text-align: center; }
 }
 
 @media (max-width: 480px) {
-  .dates-grid { grid-template-columns: 1fr; }
   .cta-content h2 { font-size: 36px; }
 }
