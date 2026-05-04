@@ -748,7 +748,7 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
 
 .docs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -797,6 +797,14 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
   background-position: center;
   background-size: 26px 26px;
 }
+.doc-icon--relato {
+  background-color: var(--blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+}
+
 
 .doc-card h3 {
   font-size: 20px;
@@ -1057,7 +1065,7 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
    RESPONSIVE
 ============================================= */
 @media (max-width: 1024px) {
-  .dates-grid { grid-template-columns: repeat(3, 1fr); }
+  .dates-grid { grid-template-columns: repeat(2, 1fr); }
   .docs-grid  { grid-template-columns: 1fr; }
 }
 
@@ -1185,4 +1193,97 @@ h1, h2, h3, h4, .btn, nav a, .eyebrow, .brand-badge {
 
 @media (max-width: 480px) {
   .cta-content h2 { font-size: 36px; }
+}
+
+/* =============================================
+   WORKSHOPS SECTION
+============================================= */
+.workshops-section {
+  background: var(--white);
+  padding: 100px 0 110px;
+  border-top: 1px solid var(--border);
+}
+
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.workshop-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.workshop-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 6px 24px var(--blue-glow);
+}
+
+.workshop-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: .18;
+  letter-spacing: -1px;
+}
+
+.workshop-body {
+  flex: 1;
+}
+
+.workshop-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.workshop-meta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 10px;
+}
+
+.workshop-body > p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.workshop-badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  border-radius: 4px;
+  padding: 3px 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Workshops responsive */
+@media (max-width: 640px) {
+  .workshops-section { padding: 72px 0 80px; }
+  .workshops-grid { grid-template-columns: 1fr; gap: 12px; }
+  .workshop-card { padding: 24px 20px; gap: 16px; }
+  .workshop-num { font-size: 28px; }
+  .workshop-body h3 { font-size: 16px; }
 }

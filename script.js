@@ -126,6 +126,7 @@ revealOnScroll('.doc-card',          'up',   90);
 revealOnScroll('.area-chip',         'left', 30);
 revealOnScroll('.area-note',         'up',    0);
 revealOnScroll('.split-left',        'left',  0);
+revealOnScroll('.workshop-card',     'up',  100);
 revealOnScroll('.cta-content',       'left',  0);
 revealOnScroll('.cta-card',          'right', 80);
 
